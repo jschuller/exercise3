@@ -29,6 +29,11 @@ jobs:
     env: 
       JOB_VAR: "This is a job variable"
     steps:
+      - name: secondJob script
+        shell: bash
+        run: |
+          echo this is the second job
+          echo and this is a multi-line script
       - name: environment variables 
         env:
           STEP_VAR: "This variable is declared at the step level"
@@ -41,8 +46,4 @@ jobs:
           echo $GITHUB_ACTOR 
           echo $GITHUB_JOB 
           echo $GITHUB_REF
-      - name: secondJob script
-        shell: bash
-        run: |
-          echo this is the second job
-          echo and this is a multi-line script
+
